@@ -106,14 +106,21 @@ function intento(){
         } else {
             if(puntuacionUsuario > puntuacionMaquina){
                 alert("ganaste el set")
+                puntuacionSetUsuario++
             } else {
                 alert("perdiste el set")
+                puntuacionSetMaquina++
             }
         }
-
+        alert(`sets ganados:${puntuacionSetUsuario}\nsets perdidos:${puntuacionSetMaquina}`)
     }
-
-
-
-    
-}intento()
+    if(puntuacionSetUsuario > puntuacionSetMaquina){
+        alert("has ganado!")
+    } else {
+        var deNuevo = prompt("Perdiste, intentar de nuevo? \n1.Si\n2.No")
+        if (deNuevo == 1) {
+            intento()
+        }
+    }
+}
+intento()
