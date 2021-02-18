@@ -45,7 +45,7 @@
 }
 Proyecto()*/
 function intento(){
-    const sets = prompt("¿cuantos sets quieres jugar?")
+    var sets = prompt("¿cuantos sets quieres jugar?")
     if(sets < 0){
         alert("escoge un numero valido")
         intento()
@@ -53,37 +53,67 @@ function intento(){
     if (sets > 3 ){
     alert("escoge un numero menor a 3")
     }
-    const escoge = prompt("Escoge uno \n1.piedra\n2.papel\n3.tijera")
-    const maquinaescoge = Math.floor(Math.random() * 3)
-    if (maquinaescoge == 0){
-        maquinaescoge++
-    }    
-    const piedra = 1
-    const papel = 2
-    const tijera = 3
+    var puntuacionSetUsuario = 0
+    var puntuacionSetMaquina = 0
+    for(let i = 0 ; i < sets ; i++){
+        var puntuacionUsuario = 0
+        var puntuacionMaquina = 0
 
-    if((escoge == piedra && maquinaescoge == papel )){
-        alert("perdiste, escogiste piedra y yo papel")
-    }    
-    if ((escoge == papel && maquinaescoge == tijera)){
-        alert("perdiste, escogiste papel y yo tijera")
-    }
-    if((escoge == tijera && maquinaescoge == piedra)){
-        alert("perdiste, escogiste tijera y yo piedra")
-    }
+        for(let j = 0 ; j < 3 ; j++){
 
-    if((escoge == piedra && maquinaescoge == tijera )){
-        alert("ganaste , escogiste piedra y yo tijera")
-    }    
-    if ((escoge == papel && maquinaescoge == piedra)){
-        alert("ganaste, escogiste papel y yo piedra")
-    }
-    if((escoge == tijera && maquinaescoge == papel)){
-        alert("ganaste, escogiste tijera y yo papel")
-    }
+            var escoge = prompt("Escoge uno \n1.piedra\n2.papel\n3.tijera")
+            var  maquinaescoge = Math.floor(Math.random() * 2 + 1)
+   
+            const piedra = 1
+            const papel = 2
+            const tijera = 3
+        
+            if((escoge == piedra && maquinaescoge == papel )){
+                alert("perdiste, escogiste piedra y yo papel")
+                puntuacionMaquina++
+            }    
+            if ((escoge == papel && maquinaescoge == tijera)){
+                alert("perdiste, escogiste papel y yo tijera")
+                puntuacionMaquina++
+            }
+
+            if((escoge == tijera && maquinaescoge == piedra)){
+                alert("perdiste, escogiste tijera y yo piedra")
+                puntuacionMaquina++
+            }
+
+                if((escoge == piedra && maquinaescoge == tijera )){
+                    alert("ganaste , escogiste piedra y yo tijera")
+                    puntuacionUsuario++
+                }    
+                    if ((escoge == papel && maquinaescoge == piedra)){
+                        alert("ganaste, escogiste papel y yo piedra")
+                    puntuacionUsuario++
+                    }
+            if((escoge == tijera && maquinaescoge == papel)){
+                alert("ganaste, escogiste tijera y yo papel")
+                puntuacionUsuario++
+            }
     
-    if(escoge == maquinaescoge){
-        alert("empatamos")
+            if(escoge == maquinaescoge){
+                alert("empatamos")
+            }
+            alert(`Usuario:${puntuacionUsuario}\nMaquina:${puntuacionMaquina}`)
+        }
+        if(puntuacionUsuario == puntuacionMaquina){
+            alert("Empataron el primer set")
+            
+        } else {
+            if(puntuacionUsuario > puntuacionMaquina){
+                alert("ganaste el set")
+            } else {
+                alert("perdiste el set")
+            }
+        }
+
     }
-}
-intento()
+
+
+
+    
+}intento()
