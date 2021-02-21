@@ -44,7 +44,9 @@
 }
 }
 Proyecto()*/
-function intento(){
+
+
+/*function intento(){
     var sets = prompt("¿cuantos sets quieres jugar?")
     if(sets < 0){
         alert("escoge un numero valido")
@@ -123,4 +125,180 @@ function intento(){
         }
     }
 }
-intento()
+intento()*/
+function definitiva() {
+    var sets = prompt('ingresa el numero de sets que quieres jugar')
+    if (sets < 0){
+        alert('ingresa un numero válido')
+    }
+    var puntuacionSetUsuario = 0
+    var puntuacionSetMaquina = 0
+    for(let i = 0 ; i < sets ; i++){
+    var puntuacionUsuario = 0
+    var puntuacionMaquina = 0
+        for(let j = 0 ; j < 3 ; j++){
+            var arma = prompt('Escoge:\n1.Piedra\n2.Papel\n3.Tijera\n4.Lagarto\n5.Spock')
+            var Piedra = 1
+            var Papel = 2
+            var Tijera = 3
+            var Lagarto = 4
+            var Spock = 5
+            var maquinaEscoge = Math.floor(Math.ramdom() * 4 + 1)
+
+            if (maquinaEscoge == Piedra && arma == Papel){
+                alert("Ganaste, Papel envuelve piedra")
+                puntuacionUsuario++
+            } else {
+                if(arma == Spock){
+                alert("Ganaste, Spock vaporiza Piedra")
+                puntuacionUsuario++
+                } else {
+                    if (arma == Lagarto){
+                        alert('Perdiste, Lagarto es aplastado por Piedra')
+                        puntuacionMaquina++
+                    } else {
+                        if (arma == Tijera){
+                            alert('Perdiste, Tijera es aplatada por Piedra')
+                            puntuacionMaquina++
+                        } else {
+                            if(arma == Piedra){
+                                alert('Escogiste Piedra y yo Piedra')
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (maquinaEscoge == Papel && arma == Tijera){
+                alert('Ganaste, Tijera corta Papel')
+                puntuacionUsuario++
+            } else {
+                if(arma == Piedra){
+                    alert('Perdiste, Piedra es envuelta por papel')
+                    puntuacionMaquina++
+                } else {
+                    if(arma == Lagarto){
+                        alert('Ganaste, Lagarto come Papel')
+                        puntuacionUsuario++
+                    } else {
+                        if(arma == Spock){
+                            alert('Perdiste, Papel funa a Spock')
+                            puntuacionMaquina++
+                        } else {
+                            if(arma == Papel){
+                                alert('Escogiste Papel y yo Papel')
+                            }
+                        }
+                    }
+                }
+            }
+
+            if(maquinaEscoge == Tijera && arma == Piedra){
+                alert('Ganaste, Piedra aplasta Tijera')
+                puntuacionUsuario++
+            } else {
+                if(arma == Papel){
+                    alert('Perdiste, Papel es cortado por Tijeras')
+                    puntuacionMaquina++
+                } else {
+                    if(arma == Tijera){
+                        alert('Escogiste Tijera y yo Tijera')
+                    } else {
+                        if (arma == Lagarto){
+                            alert('Perdiste Lagarto es decapitado por Tijera')
+                            puntuacionMaquina++
+                        } else {
+                            if(arma == Spock){
+                                alert('Ganaste, Spock rompe Tijeras')
+                                puntuacionUsuario++
+                            } 
+                        }
+                    }
+                }
+            }
+
+            if(maquinaEscoge == Lagarto && arma == Piedra){
+                alert('Ganaste, Piedra aplasta Lagarto')
+                puntuacionSetUsuario++
+            } else {
+                if (arma == Papel){
+                    alert('Perdiste, Papel es comida de Lagarto')
+                    puntuacionMaquina++
+                } else {
+                    if (arma == Tijera){
+                        alert('Ganaste, Tijera decapita Lagarto')
+                        puntuacionUsuario++
+                    } else {
+                        if (arma == Lagarto){
+                            alert('Escogiste Lagarto y yo Lagarto')
+                        } else {
+                            if (arma == Spock){
+                                alert('Perdiste, Spock es envenenado por Lagarto')
+                                puntuacionMaquina++
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (maquinaEscoge == Spock && arma == Piedra){
+                alert('Perdiste, Spock vaporiza Piedra')
+                puntuacionMaquina++
+            } else {
+                if (arma == Papel){
+                    alert('Ganaste, Papel funa a Spock')
+                    puntuacionUsuario++
+                } else {
+                    if (arma == Tijera){
+                        alert('Perdiste, Tijera es destrozada por Spock')
+                        puntuacionMaquina++
+                    } else {
+                        if (arma == Lagarto){
+                            alert('Ganaste, Lagarto envenena a Spock')
+                            puntuacionUsuario++
+                        } else {
+                            if (arma == Spock){
+                                alert('Escogiste Spock y yo Spock')
+                            }
+                        }
+                    }
+                }
+            }
+
+            alert(`Puntuacion Usuario: ${puntuacionUsuario}\nPuntuacion Maquina: ${puntuacionMaquina}`)
+            if (puntuacionUsuario < puntuacionMaquina){
+                alert('Perdiste el set')
+                puntuacionSetMaquina++
+            } else {
+                if (puntuacionUsuario > puntuacionMaquina){
+                    alert('Ganaste el set')
+                    puntuacionSetUsuario++
+                } else {
+                    if (puntuacionUsuario == puntuacionMaquina){
+                        alert('Empataste el set')
+                    }
+                }
+            }
+        }
+         alert(`Sets ganados por la Maquina: ${puntuacionSetMaquina}\nSets ganados por el Usuario: ${puntuacionSetUsuario}`)
+
+         if (puntuacionSetUsuario > puntuacionSetMaquina){
+            alert('Ganaste la partida, Felicidades')
+         } else {
+             if (puntuacionSetUsuario < puntuacionSetMaquina) {
+                 alert('Perdiste la partida, ¡Mejor suerte la próxima!')
+                 var nuevo = prompt('Intentar de nuevo?\n1.Si \n2.No')
+                 if(nuevo == 1){
+                    definitiva()
+                 } else {}
+             } else {
+                 alert('Empatamos la partida')
+                 var nuevo = prompt('Intentar de nuevo?\n1.Si \n2.No')
+                 if (nuevo == 1){
+                     definitiva()
+                 } else {}
+             }
+         }
+    }
+}
+definitiva()
