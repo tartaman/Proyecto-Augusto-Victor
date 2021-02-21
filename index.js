@@ -143,25 +143,25 @@ function definitiva() {
             var Tijera = 3
             var Lagarto = 4
             var Spock = 5
-            var maquinaEscoge = Math.floor(Math.ramdom() * 4 + 1)
+            var maquinaEscoge = Math.floor(Math.random() * 4 + 1)
 
-            if (maquinaEscoge == Piedra && arma == Papel){
+            if (arma == Papel && maquinaEscoge == Piedra){
                 alert("Ganaste, Papel envuelve piedra")
                 puntuacionUsuario++
             } else {
-                if(arma == Spock){
+                if(arma == Spock && maquinaEscoge == Piedra){
                 alert("Ganaste, Spock vaporiza Piedra")
                 puntuacionUsuario++
                 } else {
-                    if (arma == Lagarto){
+                    if (arma == Lagarto && maquinaEscoge == Piedra){
                         alert('Perdiste, Lagarto es aplastado por Piedra')
                         puntuacionMaquina++
                     } else {
-                        if (arma == Tijera){
+                        if (arma == Tijera && maquinaEscoge == Piedra){
                             alert('Perdiste, Tijera es aplatada por Piedra')
                             puntuacionMaquina++
                         } else {
-                            if(arma == Piedra){
+                            if(arma == Piedra && maquinaEscoge == Piedra){
                                 alert('Escogiste Piedra y yo Piedra')
                             }
                         }
@@ -169,23 +169,23 @@ function definitiva() {
                 }
             }
 
-            if (maquinaEscoge == Papel && arma == Tijera){
+            if (arma == Tijera && maquinaEscoge == Papel){
                 alert('Ganaste, Tijera corta Papel')
                 puntuacionUsuario++
             } else {
-                if(arma == Piedra){
+                if(arma == Piedra && maquinaEscoge == Papel){
                     alert('Perdiste, Piedra es envuelta por papel')
                     puntuacionMaquina++
                 } else {
-                    if(arma == Lagarto){
+                    if(arma == Lagarto && maquinaEscoge == Papel){
                         alert('Ganaste, Lagarto come Papel')
                         puntuacionUsuario++
                     } else {
-                        if(arma == Spock){
+                        if(arma == Spock && maquinaEscoge == Papel){
                             alert('Perdiste, Papel funa a Spock')
                             puntuacionMaquina++
                         } else {
-                            if(arma == Papel){
+                            if(arma == Papel && maquinaEscoge == Papel){
                                 alert('Escogiste Papel y yo Papel')
                             }
                         }
@@ -193,22 +193,22 @@ function definitiva() {
                 }
             }
 
-            if(maquinaEscoge == Tijera && arma == Piedra){
+            if(arma == Piedra && maquinaEscoge == Tijera){
                 alert('Ganaste, Piedra aplasta Tijera')
                 puntuacionUsuario++
             } else {
-                if(arma == Papel){
+                if(arma == Papel && maquinaEscoge == Tijera){
                     alert('Perdiste, Papel es cortado por Tijeras')
                     puntuacionMaquina++
                 } else {
-                    if(arma == Tijera){
+                    if(arma == Tijera && maquinaEscoge == Tijera){
                         alert('Escogiste Tijera y yo Tijera')
                     } else {
-                        if (arma == Lagarto){
+                        if (arma == Lagarto && maquinaEscoge == Tijera){
                             alert('Perdiste Lagarto es decapitado por Tijera')
                             puntuacionMaquina++
                         } else {
-                            if(arma == Spock){
+                            if(arma == Spock && maquinaEscoge == Tijera){
                                 alert('Ganaste, Spock rompe Tijeras')
                                 puntuacionUsuario++
                             } 
@@ -217,22 +217,22 @@ function definitiva() {
                 }
             }
 
-            if(maquinaEscoge == Lagarto && arma == Piedra){
+            if(arma == Piedra && maquinaEscoge == Lagarto){
                 alert('Ganaste, Piedra aplasta Lagarto')
-                puntuacionSetUsuario++
+                puntuacionUsuario++
             } else {
-                if (arma == Papel){
+                if (arma == Papel && maquinaEscoge == Lagarto){
                     alert('Perdiste, Papel es comida de Lagarto')
                     puntuacionMaquina++
                 } else {
-                    if (arma == Tijera){
+                    if (arma == Tijera && maquinaEscoge == Lagarto){
                         alert('Ganaste, Tijera decapita Lagarto')
                         puntuacionUsuario++
                     } else {
-                        if (arma == Lagarto){
+                        if (arma == Lagarto && maquinaEscoge == Lagarto){
                             alert('Escogiste Lagarto y yo Lagarto')
                         } else {
-                            if (arma == Spock){
+                            if (arma == Spock && maquinaEscoge == Lagarto){
                                 alert('Perdiste, Spock es envenenado por Lagarto')
                                 puntuacionMaquina++
                             }
@@ -241,23 +241,23 @@ function definitiva() {
                 }
             }
 
-            if (maquinaEscoge == Spock && arma == Piedra){
+            if (arma == Piedra && maquinaEscoge == Spock){
                 alert('Perdiste, Spock vaporiza Piedra')
                 puntuacionMaquina++
             } else {
-                if (arma == Papel){
+                if (arma == Papel && maquinaEscoge == Spock){
                     alert('Ganaste, Papel funa a Spock')
                     puntuacionUsuario++
                 } else {
-                    if (arma == Tijera){
+                    if (arma == Tijera && maquinaEscoge == Spock){
                         alert('Perdiste, Tijera es destrozada por Spock')
                         puntuacionMaquina++
                     } else {
-                        if (arma == Lagarto){
+                        if (arma == Lagarto && maquinaEscoge == Spock){
                             alert('Ganaste, Lagarto envenena a Spock')
                             puntuacionUsuario++
                         } else {
-                            if (arma == Spock){
+                            if (arma == Spock && maquinaEscoge == Spock){
                                 alert('Escogiste Spock y yo Spock')
                             }
                         }
@@ -266,7 +266,10 @@ function definitiva() {
             }
 
             alert(`Puntuacion Usuario: ${puntuacionUsuario}\nPuntuacion Maquina: ${puntuacionMaquina}`)
-            if (puntuacionUsuario < puntuacionMaquina){
+            
+        }
+        
+        if (puntuacionUsuario < puntuacionMaquina){
                 alert('Perdiste el set')
                 puntuacionSetMaquina++
             } else {
@@ -279,10 +282,10 @@ function definitiva() {
                     }
                 }
             }
-        }
-         alert(`Sets ganados por la Maquina: ${puntuacionSetMaquina}\nSets ganados por el Usuario: ${puntuacionSetUsuario}`)
 
-         if (puntuacionSetUsuario > puntuacionSetMaquina){
+         alert(`Sets ganados por la Maquina: ${puntuacionSetMaquina}\nSets ganados por el Usuario: ${puntuacionSetUsuario}`)   
+    }
+    if (puntuacionSetUsuario > puntuacionSetMaquina){
             alert('Ganaste la partida, Felicidades')
          } else {
              if (puntuacionSetUsuario < puntuacionSetMaquina) {
@@ -292,13 +295,14 @@ function definitiva() {
                     definitiva()
                  } else {}
              } else {
+                 if(puntuacionSetMaquina == puntuacionSetUsuario){
                  alert('Empatamos la partida')
                  var nuevo = prompt('Intentar de nuevo?\n1.Si \n2.No')
                  if (nuevo == 1){
                      definitiva()
+                    }
                  } else {}
              }
          }
-    }
 }
 definitiva()
