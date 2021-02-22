@@ -143,7 +143,7 @@ function definitiva() {
             var Tijera = 3
             var Lagarto = 4
             var Spock = 5
-            var maquinaEscoge = Math.floor(Math.random() * 4 + 1)
+            var maquinaEscoge = Math.floor(Math.random() * 5 + 1)
 
             if (arma == Papel && maquinaEscoge == Piedra){
                 alert("Ganaste, Papel envuelve piedra")
