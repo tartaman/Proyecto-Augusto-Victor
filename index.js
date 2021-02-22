@@ -137,7 +137,7 @@ function definitiva() {
     var puntuacionUsuario = 0
     var puntuacionMaquina = 0
         for(let j = 0 ; j < 3 ; j++){
-            var arma = prompt('Escoge:\n1.Piedra\n2.Papel\n3.Tijera\n4.Lagarto\n5.Spock')
+            var arma = parseInt(prompt('Escoge:\n1.Piedra\n2.Papel\n3.Tijera\n4.Lagarto\n5.Spock'))
             var Piedra = 1
             var Papel = 2
             var Tijera = 3
